@@ -9,7 +9,7 @@
 import UIKit
 import CoreMotion
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, StreamListener {
     
     private var motionManager: CMMotionManager!
 
@@ -19,32 +19,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        motionManager = CMMotionManager()
         
-        if motionManager.accelerometerAvailable{
-            motionManager.startAccelerometerUpdates()
-            let timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target:self, selector: Selector("outputData"), userInfo: nil, repeats: true)
-            timer.fire()
-        } else {
-            print("Accelerometer is not available")
-        }
-
-        
+        let newStream: PhoneAccStream = PhoneAccStream()
+        newStream.addListener(self)
+        newStream.startupStream()
     }
     
-    func outputData(){
-        if(motionManager.accelerometerActive && motionManager.accelerometerData != nil){
-            let data:CMAccelerometerData = motionManager.accelerometerData!
-            self.xLabel.text = (String(format: "X: %.3f", (data.acceleration.x)))
-            self.yLabel.text = (String(format: "Y: %.3f", (data.acceleration.y)))
-            self.zLabel.text = (String(format: "Z: %.3f", (data.acceleration.z)))
-            
-        }
+    
+    func newSensorCoordinate(aCoordinate: Coordinate) {
+        self.xLabel.text = (String(format: "X: %.3f", (aCoordinate.x)))
+        self.yLabel.text = (String(format: "Y: %.3f", (aCoordinate.y)))
+        self.zLabel.text = (String(format: "Z: %.3f", (aCoordinate.z)))
     }
     
-    func outputData(xAcc: Double, yAcc: Double, zAcc: Double){
-        
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
