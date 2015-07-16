@@ -28,7 +28,23 @@ class PhoneAccStream : SensorDataStream {
         motionManager = CMMotionManager()
         
         if motionManager.accelerometerAvailable{
+            motionManager.accelerometerUpdateInterval = 0.02
             motionManager.startAccelerometerUpdates()
+/*
+            motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue()) {
+                [weak self] (data: CMAccelerometerData?, error: NSError?) in
+                if(data != nil){
+                    let newCoord = Coordinate(x: (data?.acceleration.x)!, y: (data?.acceleration.y)!, z: (data?.acceleration.z)!)
+                    self!.myCache.removeAtIndex(0)
+                    self!.myCache.append(newCoord)
+                    
+                    for aListner in self!.myListeners{
+                        aListner.newSensorCoordinate(newCoord)
+                    }
+                }
+            }
+*/
+            
             myTimer = NSTimer.scheduledTimerWithTimeInterval(0.02, target:self, selector: Selector("getNewCoord"), userInfo: nil, repeats: true)
             myTimer.fire()
         } else {
@@ -37,9 +53,11 @@ class PhoneAccStream : SensorDataStream {
     }
     
     
+    
     func terminateStream(){
         myTimer.invalidate()
     }
+    
     
     
     @objc func getNewCoord(){

@@ -1,0 +1,6 @@
+[submodule "Surge"]
+	path = Surge
+	url = https://github.com/mattt/Surge.git
+[submodule "SigmaSwiftStatistics"]
+	path = SigmaSwiftStatistics
+	url = https://github.com/jackbandy/SigmaSwiftStatistics.git

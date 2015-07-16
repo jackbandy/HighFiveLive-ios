@@ -23,6 +23,11 @@ class ViewController: UIViewController, StreamListener {
         let newStream: PhoneAccStream = PhoneAccStream()
         newStream.addListener(self)
         newStream.startupStream()
+        let myClassifier = LogRegClassifier(aSegmentHandler: nil)
+        let myExtractor = FeatureExtractor(aSegmentHandler: myClassifier)
+        let mySegmentor = EnergySegmentor(aHandler: myExtractor, aStream: newStream)
+        newStream.addListener(mySegmentor)
+        
     }
     
     

@@ -9,6 +9,6 @@
 import Foundation
 
 protocol SegmentHandler {
-    init(aSegmentHandler: SegmentHandler)
+    init(aSegmentHandler: SegmentHandler?)
     func handleNewSegment(segmentPoints: Array<Coordinate>, featureVector:Array<Double>?)
 }

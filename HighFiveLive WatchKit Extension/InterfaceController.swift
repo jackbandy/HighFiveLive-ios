@@ -24,7 +24,7 @@ class InterfaceController: WKInterfaceController {
         
         if motionManager.accelerometerAvailable{
             let queue = NSOperationQueue()
-            motionManager.accelerometerUpdateInterval = 0.01
+            motionManager.accelerometerUpdateInterval = 0.02
             motionManager.startAccelerometerUpdatesToQueue(queue, withHandler:
                 {data, error in
                     
