@@ -23,6 +23,10 @@
 		57783D6E1B56F7F1007E6CB2 /* ClassificationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57783D6D1B56F7F1007E6CB2 /* ClassificationListener.swift */; };
 		57783D701B56FA6C007E6CB2 /* EnergySegmentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57783D6F1B56FA6C007E6CB2 /* EnergySegmentor.swift */; };
 		57783D721B57050A007E6CB2 /* FeatureExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57783D711B57050A007E6CB2 /* FeatureExtractor.swift */; };
+		6DC874741B5DA0AA002DA465 /* GestureClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC874731B5DA0AA002DA465 /* GestureClassifier.swift */; };
+		6DC874781B5DA0C3002DA465 /* WatchAccStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC874771B5DA0C3002DA465 /* WatchAccStream.swift */; };
+		6DC8747A1B5DA0F1002DA465 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC874791B5DA0F1002DA465 /* Constants.swift */; };
+		6DC8747B1B5DA0F1002DA465 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC874791B5DA0F1002DA465 /* Constants.swift */; };
 		6DD828CC1B55899600B23F80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD828CB1B55899600B23F80 /* AppDelegate.swift */; };
 		6DD828CE1B55899600B23F80 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD828CD1B55899600B23F80 /* ViewController.swift */; };
 		6DD828D11B55899600B23F80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DD828CF1B55899600B23F80 /* Main.storyboard */; };
@@ -148,6 +152,9 @@
 		57783D6F1B56FA6C007E6CB2 /* EnergySegmentor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnergySegmentor.swift; sourceTree = "<group>"; };
 		57783D711B57050A007E6CB2 /* FeatureExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureExtractor.swift; sourceTree = "<group>"; };
 		6D1AB8E31B55DD3600AE881A /* HighFiveLive-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HighFiveLive-Bridging-Header.h"; sourceTree = "<group>"; };
+		6DC874731B5DA0AA002DA465 /* GestureClassifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureClassifier.swift; sourceTree = "<group>"; };
+		6DC874771B5DA0C3002DA465 /* WatchAccStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchAccStream.swift; sourceTree = "<group>"; };
+		6DC874791B5DA0F1002DA465 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6DD828C81B55899500B23F80 /* HighFiveLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HighFiveLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DD828CB1B55899600B23F80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DD828CD1B55899600B23F80 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -212,9 +219,11 @@
 				573D2C1D1B580872000BD15D /* SigmaSwiftStatistics.xcodeproj */,
 				573D2BF71B57E8B0000BD15D /* Surge.xcodeproj */,
 				57783D661B56D919007E6CB2 /* Coordinate.swift */,
+				6DC874791B5DA0F1002DA465 /* Constants.swift */,
 				57783D601B56D7D3007E6CB2 /* SensorDataStream.swift */,
 				57783D631B56D8DA007E6CB2 /* StreamListener.swift */,
 				57783D6B1B56F727007E6CB2 /* SegmentHandler.swift */,
+				6DC874731B5DA0AA002DA465 /* GestureClassifier.swift */,
 				57783D6D1B56F7F1007E6CB2 /* ClassificationListener.swift */,
 				6DD828CA1B55899500B23F80 /* HighFiveLive */,
 				6DD828DE1B55899600B23F80 /* HighFiveLive WatchKit App */,
@@ -265,6 +274,7 @@
 		6DD828ED1B55899600B23F80 /* HighFiveLive WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				6DC874771B5DA0C3002DA465 /* WatchAccStream.swift */,
 				6DD828F01B55899600B23F80 /* InterfaceController.swift */,
 				6DD828F21B55899600B23F80 /* ExtensionDelegate.swift */,
 				6DD828F41B55899600B23F80 /* NotificationController.swift */,
@@ -466,6 +476,8 @@
 				573D2C181B57F7FC000BD15D /* LogRegClassifier.swift in Sources */,
 				57783D641B56D8DA007E6CB2 /* StreamListener.swift in Sources */,
 				57783D6A1B56DECD007E6CB2 /* PhoneAccStream.swift in Sources */,
+				6DC874741B5DA0AA002DA465 /* GestureClassifier.swift in Sources */,
+				6DC8747A1B5DA0F1002DA465 /* Constants.swift in Sources */,
 				57783D6C1B56F727007E6CB2 /* SegmentHandler.swift in Sources */,
 				57783D611B56D7D3007E6CB2 /* SensorDataStream.swift in Sources */,
 				57783D721B57050A007E6CB2 /* FeatureExtractor.swift in Sources */,
@@ -479,11 +491,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				57783D651B56D8DA007E6CB2 /* StreamListener.swift in Sources */,
+				6DC874781B5DA0C3002DA465 /* WatchAccStream.swift in Sources */,
 				6DD828F51B55899600B23F80 /* NotificationController.swift in Sources */,
 				57783D621B56D7D3007E6CB2 /* SensorDataStream.swift in Sources */,
 				6DD828F31B55899600B23F80 /* ExtensionDelegate.swift in Sources */,
 				6DD828F11B55899600B23F80 /* InterfaceController.swift in Sources */,
 				57783D681B56D919007E6CB2 /* Coordinate.swift in Sources */,
+				6DC8747B1B5DA0F1002DA465 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

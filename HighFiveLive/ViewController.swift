@@ -8,11 +8,14 @@
 
 import UIKit
 import CoreMotion
+import AudioToolbox
 
-class ViewController: UIViewController, StreamListener {
+
+class ViewController: UIViewController, StreamListener, ClassificationListener {
     
     private var motionManager: CMMotionManager!
-
+    
+    @IBOutlet weak var gestureLabel: UILabel!
     @IBOutlet weak var xLabel: UILabel!
     @IBOutlet weak var yLabel: UILabel!
     @IBOutlet weak var zLabel: UILabel!
@@ -27,7 +30,16 @@ class ViewController: UIViewController, StreamListener {
         let myExtractor = FeatureExtractor(aSegmentHandler: myClassifier)
         let mySegmentor = EnergySegmentor(aHandler: myExtractor, aStream: newStream)
         newStream.addListener(mySegmentor)
+        myClassifier.addListener(self)
         
+        /*
+        var test = Array<Coordinate>()
+        for i in 0..<128 {
+        test.append(Coordinate(x: testSegment[(3*i)+0], y: (-1)*testSegment[(3*i)+1], z: testSegment[(3*i)+2]))
+        }
+        
+        myExtractor.handleNewSegment(test, featureVector: nil)
+        */
     }
     
     
@@ -37,12 +49,18 @@ class ViewController: UIViewController, StreamListener {
         self.zLabel.text = (String(format: "Z: %.3f", (aCoordinate.z)))
     }
     
-
+    
+    func didReceiveNewClassification(aClassification: String){
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        self.gestureLabel.text = aClassification
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 
