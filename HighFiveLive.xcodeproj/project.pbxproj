@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		573D2C001B57E912000BD15D /* Surge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 573D2BFD1B57E8B0000BD15D /* Surge.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		573D2C071B57ED89000BD15D /* Surge.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 573D2BFD1B57E8B0000BD15D /* Surge.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		573D2C181B57F7FC000BD15D /* LogRegClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573D2C171B57F7FC000BD15D /* LogRegClassifier.swift */; };
 		573D2C261B58087C000BD15D /* SigmaSwiftStatistics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 573D2C231B580873000BD15D /* SigmaSwiftStatistics.framework */; };
 		573D2C271B58087C000BD15D /* SigmaSwiftStatistics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 573D2C231B580873000BD15D /* SigmaSwiftStatistics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -43,27 +41,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		573D2BFC1B57E8B0000BD15D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 573D2BF71B57E8B0000BD15D /* Surge.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F8A1E1AA19917A79009735E2;
-			remoteInfo = Surge;
-		};
-		573D2BFE1B57E8B0000BD15D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 573D2BF71B57E8B0000BD15D /* Surge.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F84A6AAE19A9A72F007B53E1;
-			remoteInfo = SurgeTests;
-		};
-		573D2C081B57ED89000BD15D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 573D2BF71B57E8B0000BD15D /* Surge.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F8A1E1A919917A79009735E2;
-			remoteInfo = Surge;
-		};
 		573D2C221B580873000BD15D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 573D2C1D1B580872000BD15D /* SigmaSwiftStatistics.xcodeproj */;
@@ -108,7 +85,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				573D2C071B57ED89000BD15D /* Surge.framework in Embed Frameworks */,
 				573D2C271B58087C000BD15D /* SigmaSwiftStatistics.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -139,7 +115,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		573D2BF71B57E8B0000BD15D /* Surge.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Surge.xcodeproj; path = Surge/Surge.xcodeproj; sourceTree = "<group>"; };
 		573D2C171B57F7FC000BD15D /* LogRegClassifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogRegClassifier.swift; sourceTree = "<group>"; };
 		573D2C1D1B580872000BD15D /* SigmaSwiftStatistics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SigmaSwiftStatistics.xcodeproj; path = SigmaSwiftStatistics/SigmaSwiftStatistics.xcodeproj; sourceTree = "<group>"; };
 		57783D5F1B56D7D2007E6CB2 /* HighFiveLive WatchKit App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HighFiveLive WatchKit App-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -181,7 +156,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				573D2C261B58087C000BD15D /* SigmaSwiftStatistics.framework in Frameworks */,
-				573D2C001B57E912000BD15D /* Surge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,15 +169,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		573D2BF81B57E8B0000BD15D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				573D2BFD1B57E8B0000BD15D /* Surge.framework */,
-				573D2BFF1B57E8B0000BD15D /* SurgeTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		573D2C1E1B580872000BD15D /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,7 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				573D2C1D1B580872000BD15D /* SigmaSwiftStatistics.xcodeproj */,
-				573D2BF71B57E8B0000BD15D /* Surge.xcodeproj */,
 				57783D661B56D919007E6CB2 /* Coordinate.swift */,
 				6DC874791B5DA0F1002DA465 /* Constants.swift */,
 				57783D601B56D7D3007E6CB2 /* SensorDataStream.swift */,
@@ -310,7 +274,6 @@
 			);
 			dependencies = (
 				6DD828DD1B55899600B23F80 /* PBXTargetDependency */,
-				573D2C091B57ED89000BD15D /* PBXTargetDependency */,
 				573D2C291B58087C000BD15D /* PBXTargetDependency */,
 			);
 			name = HighFiveLive;
@@ -390,10 +353,6 @@
 					ProductGroup = 573D2C1E1B580872000BD15D /* Products */;
 					ProjectRef = 573D2C1D1B580872000BD15D /* SigmaSwiftStatistics.xcodeproj */;
 				},
-				{
-					ProductGroup = 573D2BF81B57E8B0000BD15D /* Products */;
-					ProjectRef = 573D2BF71B57E8B0000BD15D /* Surge.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -405,20 +364,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		573D2BFD1B57E8B0000BD15D /* Surge.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Surge.framework;
-			remoteRef = 573D2BFC1B57E8B0000BD15D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		573D2BFF1B57E8B0000BD15D /* SurgeTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SurgeTests.xctest;
-			remoteRef = 573D2BFE1B57E8B0000BD15D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		573D2C231B580873000BD15D /* SigmaSwiftStatistics.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -504,11 +449,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		573D2C091B57ED89000BD15D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Surge;
-			targetProxy = 573D2C081B57ED89000BD15D /* PBXContainerItemProxy */;
-		};
 		573D2C291B58087C000BD15D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SigmaSwiftStatistics;
