@@ -45,19 +45,19 @@ class FeatureExtractor : SegmentHandler {
         
         //-------TIME DOMAIN FEATURES------
         //Minimum values
-        features.insert(Surge.min(xArray), atIndex: featCount++)
-        features.insert(Surge.min(yArray), atIndex: featCount++)
-        features.insert(Surge.min(zArray), atIndex: featCount++)
+        features.insert(σ.min(xArray)!, atIndex: featCount++)
+        features.insert(σ.min(yArray)!, atIndex: featCount++)
+        features.insert(σ.min(zArray)!, atIndex: featCount++)
         
         //Maximum values
-        features.insert(Surge.max(xArray), atIndex: featCount++)
-        features.insert(Surge.max(yArray), atIndex: featCount++)
-        features.insert(Surge.max(zArray), atIndex: featCount++)
+        features.insert(σ.max(xArray)!, atIndex: featCount++)
+        features.insert(σ.max(yArray)!, atIndex: featCount++)
+        features.insert(σ.max(zArray)!, atIndex: featCount++)
         
         //Mean values
-        features.insert(Surge.mean(xArray), atIndex: featCount++)
-        features.insert(Surge.mean(yArray), atIndex: featCount++)
-        features.insert(Surge.mean(zArray), atIndex: featCount++)
+        features.insert(σ.average(xArray)!, atIndex: featCount++)
+        features.insert(σ.average(yArray)!, atIndex: featCount++)
+        features.insert(σ.average(zArray)!, atIndex: featCount++)
         
         //Standard deviation
         features.insert(σ.standardDeviationPopulation(xArray)!, atIndex: featCount++)
@@ -75,9 +75,9 @@ class FeatureExtractor : SegmentHandler {
         features.insert(σ.zeroCrossRate(zArray)!, atIndex: featCount++)
         
         //Skew
-        features.insert(Surge.mean(xArray), atIndex: featCount++)
-        features.insert(Surge.mean(yArray), atIndex: featCount++)
-        features.insert(Surge.mean(zArray), atIndex: featCount++)
+        features.insert(σ.skew(xArray)!, atIndex: featCount++)
+        features.insert(σ.skew(yArray)!, atIndex: featCount++)
+        features.insert(σ.skew(zArray)!, atIndex: featCount++)
         
         //Kurtosis
         features.insert(σ.kurtosis(xArray)!, atIndex: featCount++)
@@ -101,9 +101,9 @@ class FeatureExtractor : SegmentHandler {
         
         
         //-------FREQUENCY DOMAIN FEATURES------
-        let xFFT = Surge.fft(xArray)
-        let yFFT = Surge.fft(yArray)
-        let zFFT = Surge.fft(zArray)
+        let xFFT = σ.swiFFT(xArray)
+        let yFFT = σ.swiFFT(yArray)
+        let zFFT = σ.swiFFT(zArray)
 
         //FFT Signal Energy
         features.insert(signalEnergyFromFFT(xFFT), atIndex: featCount++)
@@ -114,13 +114,13 @@ class FeatureExtractor : SegmentHandler {
         //First 8 DFT Coefficients
         let numberOfCoefficients = 8
         for i in 0..<numberOfCoefficients {
-            features.insert(xFFT[i], atIndex: featCount++)
+            features.insert((128 * xFFT[i]), atIndex: featCount++)
         }
         for i in 0..<numberOfCoefficients {
-            features.insert(yFFT[i], atIndex: featCount++)
+            features.insert((128 * yFFT[i]), atIndex: featCount++)
         }
         for i in 0..<numberOfCoefficients {
-            features.insert(zFFT[i], atIndex: featCount++)
+            features.insert((128 * zFFT[i]), atIndex: featCount++)
         }
         
         let duration = NSDate().timeIntervalSinceDate(startTime)
