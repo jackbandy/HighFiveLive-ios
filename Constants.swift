@@ -8,6 +8,8 @@
 
 import Foundation
 
+public let euler = 2.71828182845904523536028747135266250   /* e */
+
 public let featureAnswers : Array<Double> = [
     -4.0,           -0.78906,      -4.0,            3.9922,        2.3125,
 0.64844,     -0.18175788,    0.68914616,   -0.47064053,    1.24265589,

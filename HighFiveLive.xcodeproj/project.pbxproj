@@ -117,7 +117,6 @@
 /* Begin PBXFileReference section */
 		573D2C171B57F7FC000BD15D /* LogRegClassifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogRegClassifier.swift; sourceTree = "<group>"; };
 		573D2C1D1B580872000BD15D /* SigmaSwiftStatistics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SigmaSwiftStatistics.xcodeproj; path = SigmaSwiftStatistics/SigmaSwiftStatistics.xcodeproj; sourceTree = "<group>"; };
-		57783D5F1B56D7D2007E6CB2 /* HighFiveLive WatchKit App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HighFiveLive WatchKit App-Bridging-Header.h"; sourceTree = "<group>"; };
 		57783D601B56D7D3007E6CB2 /* SensorDataStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDataStream.swift; sourceTree = "<group>"; };
 		57783D631B56D8DA007E6CB2 /* StreamListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamListener.swift; sourceTree = "<group>"; };
 		57783D661B56D919007E6CB2 /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
@@ -126,7 +125,6 @@
 		57783D6D1B56F7F1007E6CB2 /* ClassificationListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassificationListener.swift; sourceTree = "<group>"; };
 		57783D6F1B56FA6C007E6CB2 /* EnergySegmentor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnergySegmentor.swift; sourceTree = "<group>"; };
 		57783D711B57050A007E6CB2 /* FeatureExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureExtractor.swift; sourceTree = "<group>"; };
-		6D1AB8E31B55DD3600AE881A /* HighFiveLive-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HighFiveLive-Bridging-Header.h"; sourceTree = "<group>"; };
 		6DC874731B5DA0AA002DA465 /* GestureClassifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureClassifier.swift; sourceTree = "<group>"; };
 		6DC874771B5DA0C3002DA465 /* WatchAccStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchAccStream.swift; sourceTree = "<group>"; };
 		6DC874791B5DA0F1002DA465 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -193,8 +191,6 @@
 				6DD828DE1B55899600B23F80 /* HighFiveLive WatchKit App */,
 				6DD828ED1B55899600B23F80 /* HighFiveLive WatchKit Extension */,
 				6DD828C91B55899500B23F80 /* Products */,
-				6D1AB8E31B55DD3600AE881A /* HighFiveLive-Bridging-Header.h */,
-				57783D5F1B56D7D2007E6CB2 /* HighFiveLive WatchKit App-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -658,7 +654,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackbandy.HighFiveLive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "HighFiveLive-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -673,7 +669,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackbandy.HighFiveLive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "HighFiveLive-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};

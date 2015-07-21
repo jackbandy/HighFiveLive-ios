@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Surge
 import SigmaSwiftStatistics
 
 class FeatureExtractor : SegmentHandler {
@@ -20,7 +19,7 @@ class FeatureExtractor : SegmentHandler {
     func signalEnergyFromFFT(theFFT: Array<Double>) -> Double{
         var runSum : Double = 0.0
         for i in 0..<theFFT.count {
-            runSum += Surge.pow(theFFT[i], 2)
+            runSum += pow(theFFT[i], 2)
         }
         return (1.0/128.0)*runSum
     }

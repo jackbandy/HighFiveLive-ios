@@ -122,6 +122,6 @@ class LogRegClassifier : SegmentHandler, GestureClassifier {
     
     
     func sigmoid(z: Double) -> Double {
-        return (1.0 / (1 + Surge.exp(-z)))
+        return (1.0 / (1 + pow(euler,-z)))
     }
 }
