@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SigmaSwiftStatistics
 
 class FeatureExtractor : SegmentHandler {
     let myNextHandler: SegmentHandler!

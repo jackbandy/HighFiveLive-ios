@@ -13,15 +13,23 @@
                         <label alignment="left" text="Label" id="qGC-t3-stb"/>
                         <label alignment="left" text="Label" id="Vrr-uQ-kHN"/>
                         <label alignment="left" text="Label" id="Ce4-PA-Oy6"/>
+                        <separator alignment="left" id="jVF-WQ-D0p"/>
+                        <label width="136" alignment="left" text="No gesture yet!" id="oVm-wj-73R"/>
+                        <button width="1" alignment="left" title="Start" id="g31-yN-EaS">
+                            <connections>
+                                <action selector="startBtn" destination="AgC-eL-Hgc" id="KmF-Xq-6Ys"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
+                        <outlet property="gestureLabel" destination="oVm-wj-73R" id="Eea-so-2aM"/>
                         <outlet property="xLabel" destination="qGC-t3-stb" id="FBt-vu-naW"/>
                         <outlet property="yLabel" destination="Vrr-uQ-kHN" id="S8B-07-Ad0"/>
                         <outlet property="zLabel" destination="Ce4-PA-Oy6" id="Zkg-kH-t3O"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="220" y="344.5"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

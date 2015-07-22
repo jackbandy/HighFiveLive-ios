@@ -28,12 +28,13 @@ class EnergySegmentor : StreamListener {
         if(!isSegmenting){
             //NOT CURRENTLY TRACKING
             if(aCoordinate.magnitude > MAGNITUDE_THRESHOLD){
+                /*
                 let notification = UILocalNotification()
                 notification.alertBody = "You did it!"
                 notification.fireDate = NSDate()
                 notification.soundName = UILocalNotificationDefaultSoundName // play default sound
                 UIApplication.sharedApplication().scheduleLocalNotification(notification)
-                
+                */
                 isSegmenting = true
                 var toAdd: Array<Coordinate> = streamSource.getCache256()
                 toAdd.removeRange(0..<240)
@@ -47,6 +48,7 @@ class EnergySegmentor : StreamListener {
             if(currentSegment.count == 128){
                 isSegmenting = false
                 nextHandler.handleNewSegment(currentSegment,featureVector:nil)
+                currentSegment.removeAll()
             }
             else{
                 currentSegment.append(aCoordinate)

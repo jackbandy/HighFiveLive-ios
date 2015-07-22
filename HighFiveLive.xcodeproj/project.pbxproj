@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		573D2C181B57F7FC000BD15D /* LogRegClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573D2C171B57F7FC000BD15D /* LogRegClassifier.swift */; };
-		573D2C261B58087C000BD15D /* SigmaSwiftStatistics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 573D2C231B580873000BD15D /* SigmaSwiftStatistics.framework */; };
-		573D2C271B58087C000BD15D /* SigmaSwiftStatistics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 573D2C231B580873000BD15D /* SigmaSwiftStatistics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		57783D611B56D7D3007E6CB2 /* SensorDataStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57783D601B56D7D3007E6CB2 /* SensorDataStream.swift */; };
 		57783D621B56D7D3007E6CB2 /* SensorDataStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57783D601B56D7D3007E6CB2 /* SensorDataStream.swift */; };
 		57783D641B56D8DA007E6CB2 /* StreamListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57783D631B56D8DA007E6CB2 /* StreamListener.swift */; };
@@ -21,6 +19,15 @@
 		57783D6E1B56F7F1007E6CB2 /* ClassificationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57783D6D1B56F7F1007E6CB2 /* ClassificationListener.swift */; };
 		57783D701B56FA6C007E6CB2 /* EnergySegmentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57783D6F1B56FA6C007E6CB2 /* EnergySegmentor.swift */; };
 		57783D721B57050A007E6CB2 /* FeatureExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57783D711B57050A007E6CB2 /* FeatureExtractor.swift */; };
+		6D1E6D5A1B5ED09D006620E6 /* ClassificationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57783D6D1B56F7F1007E6CB2 /* ClassificationListener.swift */; };
+		6D1E6D5C1B5ED0A0006620E6 /* GestureClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC874731B5DA0AA002DA465 /* GestureClassifier.swift */; };
+		6D1E6D5D1B5ED0A4006620E6 /* SegmentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57783D6B1B56F727007E6CB2 /* SegmentHandler.swift */; };
+		6D1E6D5E1B5ED0C6006620E6 /* LogRegClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573D2C171B57F7FC000BD15D /* LogRegClassifier.swift */; };
+		6D1E6D5F1B5ED0C9006620E6 /* FeatureExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57783D711B57050A007E6CB2 /* FeatureExtractor.swift */; };
+		6D1E6D601B5ED0CC006620E6 /* EnergySegmentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57783D6F1B56FA6C007E6CB2 /* EnergySegmentor.swift */; };
+		6D1E6D621B5ED145006620E6 /* Sigma.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1E6D611B5ED145006620E6 /* Sigma.swift */; };
+		6D1E6D631B5ED156006620E6 /* Sigma.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1E6D611B5ED145006620E6 /* Sigma.swift */; };
+		6D2751451B5EDC23001B2B20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DD828D21B55899600B23F80 /* Assets.xcassets */; };
 		6DC874741B5DA0AA002DA465 /* GestureClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC874731B5DA0AA002DA465 /* GestureClassifier.swift */; };
 		6DC874781B5DA0C3002DA465 /* WatchAccStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC874771B5DA0C3002DA465 /* WatchAccStream.swift */; };
 		6DC8747A1B5DA0F1002DA465 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC874791B5DA0F1002DA465 /* Constants.swift */; };
@@ -28,7 +35,6 @@
 		6DD828CC1B55899600B23F80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD828CB1B55899600B23F80 /* AppDelegate.swift */; };
 		6DD828CE1B55899600B23F80 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD828CD1B55899600B23F80 /* ViewController.swift */; };
 		6DD828D11B55899600B23F80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DD828CF1B55899600B23F80 /* Main.storyboard */; };
-		6DD828D31B55899600B23F80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DD828D21B55899600B23F80 /* Assets.xcassets */; };
 		6DD828D61B55899600B23F80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DD828D41B55899600B23F80 /* LaunchScreen.storyboard */; };
 		6DD828DB1B55899600B23F80 /* HighFiveLive WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 6DD828DA1B55899600B23F80 /* HighFiveLive WatchKit App.app */; };
 		6DD828E11B55899600B23F80 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DD828DF1B55899600B23F80 /* Interface.storyboard */; };
@@ -41,27 +47,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		573D2C221B580873000BD15D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 573D2C1D1B580872000BD15D /* SigmaSwiftStatistics.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7EBDACCD1AFDA18A0089B815;
-			remoteInfo = SigmaSwiftStatistics;
-		};
-		573D2C241B580873000BD15D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 573D2C1D1B580872000BD15D /* SigmaSwiftStatistics.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7EBDACD71AFDA18A0089B815;
-			remoteInfo = SigmaSwiftStatisticsTests;
-		};
-		573D2C281B58087C000BD15D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 573D2C1D1B580872000BD15D /* SigmaSwiftStatistics.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 7EBDACCC1AFDA18A0089B815;
-			remoteInfo = SigmaSwiftStatistics;
-		};
 		6DD828DC1B55899600B23F80 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6DD828C01B55899500B23F80 /* Project object */;
@@ -85,7 +70,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				573D2C271B58087C000BD15D /* SigmaSwiftStatistics.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,7 +100,6 @@
 
 /* Begin PBXFileReference section */
 		573D2C171B57F7FC000BD15D /* LogRegClassifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogRegClassifier.swift; sourceTree = "<group>"; };
-		573D2C1D1B580872000BD15D /* SigmaSwiftStatistics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SigmaSwiftStatistics.xcodeproj; path = SigmaSwiftStatistics/SigmaSwiftStatistics.xcodeproj; sourceTree = "<group>"; };
 		57783D601B56D7D3007E6CB2 /* SensorDataStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDataStream.swift; sourceTree = "<group>"; };
 		57783D631B56D8DA007E6CB2 /* StreamListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamListener.swift; sourceTree = "<group>"; };
 		57783D661B56D919007E6CB2 /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
@@ -125,6 +108,7 @@
 		57783D6D1B56F7F1007E6CB2 /* ClassificationListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassificationListener.swift; sourceTree = "<group>"; };
 		57783D6F1B56FA6C007E6CB2 /* EnergySegmentor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnergySegmentor.swift; sourceTree = "<group>"; };
 		57783D711B57050A007E6CB2 /* FeatureExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureExtractor.swift; sourceTree = "<group>"; };
+		6D1E6D611B5ED145006620E6 /* Sigma.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sigma.swift; sourceTree = "<group>"; };
 		6DC874731B5DA0AA002DA465 /* GestureClassifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureClassifier.swift; sourceTree = "<group>"; };
 		6DC874771B5DA0C3002DA465 /* WatchAccStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchAccStream.swift; sourceTree = "<group>"; };
 		6DC874791B5DA0F1002DA465 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -153,7 +137,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				573D2C261B58087C000BD15D /* SigmaSwiftStatistics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,19 +150,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		573D2C1E1B580872000BD15D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				573D2C231B580873000BD15D /* SigmaSwiftStatistics.framework */,
-				573D2C251B580873000BD15D /* SigmaSwiftStatisticsTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		6DD828BF1B55899500B23F80 = {
 			isa = PBXGroup;
 			children = (
-				573D2C1D1B580872000BD15D /* SigmaSwiftStatistics.xcodeproj */,
+				6D1E6D611B5ED145006620E6 /* Sigma.swift */,
 				57783D661B56D919007E6CB2 /* Coordinate.swift */,
 				6DC874791B5DA0F1002DA465 /* Constants.swift */,
 				57783D601B56D7D3007E6CB2 /* SensorDataStream.swift */,
@@ -270,7 +244,6 @@
 			);
 			dependencies = (
 				6DD828DD1B55899600B23F80 /* PBXTargetDependency */,
-				573D2C291B58087C000BD15D /* PBXTargetDependency */,
 			);
 			name = HighFiveLive;
 			productName = HighFiveLive;
@@ -344,12 +317,6 @@
 			mainGroup = 6DD828BF1B55899500B23F80;
 			productRefGroup = 6DD828C91B55899500B23F80 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 573D2C1E1B580872000BD15D /* Products */;
-					ProjectRef = 573D2C1D1B580872000BD15D /* SigmaSwiftStatistics.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				6DD828C71B55899500B23F80 /* HighFiveLive */,
@@ -359,30 +326,13 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		573D2C231B580873000BD15D /* SigmaSwiftStatistics.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SigmaSwiftStatistics.framework;
-			remoteRef = 573D2C221B580873000BD15D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		573D2C251B580873000BD15D /* SigmaSwiftStatisticsTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SigmaSwiftStatisticsTests.xctest;
-			remoteRef = 573D2C241B580873000BD15D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		6DD828C61B55899500B23F80 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D2751451B5EDC23001B2B20 /* Assets.xcassets in Resources */,
 				6DD828D61B55899600B23F80 /* LaunchScreen.storyboard in Resources */,
-				6DD828D31B55899600B23F80 /* Assets.xcassets in Resources */,
 				6DD828D11B55899600B23F80 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DD828CE1B55899600B23F80 /* ViewController.swift in Sources */,
+				6D1E6D631B5ED156006620E6 /* Sigma.swift in Sources */,
 				57783D6E1B56F7F1007E6CB2 /* ClassificationListener.swift in Sources */,
 				57783D701B56FA6C007E6CB2 /* EnergySegmentor.swift in Sources */,
 				573D2C181B57F7FC000BD15D /* LogRegClassifier.swift in Sources */,
@@ -432,12 +383,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				57783D651B56D8DA007E6CB2 /* StreamListener.swift in Sources */,
+				6D1E6D5A1B5ED09D006620E6 /* ClassificationListener.swift in Sources */,
 				6DC874781B5DA0C3002DA465 /* WatchAccStream.swift in Sources */,
 				6DD828F51B55899600B23F80 /* NotificationController.swift in Sources */,
+				6D1E6D5F1B5ED0C9006620E6 /* FeatureExtractor.swift in Sources */,
+				6D1E6D5C1B5ED0A0006620E6 /* GestureClassifier.swift in Sources */,
 				57783D621B56D7D3007E6CB2 /* SensorDataStream.swift in Sources */,
 				6DD828F31B55899600B23F80 /* ExtensionDelegate.swift in Sources */,
+				6D1E6D5D1B5ED0A4006620E6 /* SegmentHandler.swift in Sources */,
+				6D1E6D621B5ED145006620E6 /* Sigma.swift in Sources */,
 				6DD828F11B55899600B23F80 /* InterfaceController.swift in Sources */,
+				6D1E6D601B5ED0CC006620E6 /* EnergySegmentor.swift in Sources */,
 				57783D681B56D919007E6CB2 /* Coordinate.swift in Sources */,
+				6D1E6D5E1B5ED0C6006620E6 /* LogRegClassifier.swift in Sources */,
 				6DC8747B1B5DA0F1002DA465 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,11 +403,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		573D2C291B58087C000BD15D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SigmaSwiftStatistics;
-			targetProxy = 573D2C281B58087C000BD15D /* PBXContainerItemProxy */;
-		};
 		6DD828DD1B55899600B23F80 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6DD828D91B55899600B23F80 /* HighFiveLive WatchKit App */;

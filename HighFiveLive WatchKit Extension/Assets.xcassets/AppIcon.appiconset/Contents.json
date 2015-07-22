@@ -3,7 +3,6 @@
     {
       "size" : "24x24",
       "idiom" : "watch",
-      "filename" : "h5l-icon.png",
       "scale" : "2x",
       "role" : "notificationCenter",
       "subtype" : "38mm"
@@ -30,6 +29,7 @@
     {
       "size" : "40x40",
       "idiom" : "watch",
+      "filename" : "h5l-icon.png",
       "scale" : "2x",
       "role" : "appLauncher",
       "subtype" : "38mm"

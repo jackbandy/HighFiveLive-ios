@@ -11,49 +11,72 @@ import Foundation
 import CoreMotion
 
 
-class InterfaceController: WKInterfaceController {
+class InterfaceController: WKInterfaceController, StreamListener, ClassificationListener {
     
-    lazy var motionManager = CMMotionManager()
-
     @IBOutlet var xLabel: WKInterfaceLabel!
+    @IBOutlet var gestureLabel: WKInterfaceLabel!
     @IBOutlet var yLabel: WKInterfaceLabel!
     @IBOutlet var zLabel: WKInterfaceLabel!
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    @IBAction func startBtn() {
+        self.gestureLabel.setText("tracking!")
+
+        print("A")
         
-        if motionManager.accelerometerAvailable{
-            let queue = NSOperationQueue()
-            motionManager.accelerometerUpdateInterval = 0.02
-            motionManager.startAccelerometerUpdatesToQueue(queue, withHandler:
-                {data, error in
-                    
-                    guard let data = data else{
-                        return
-                    }
-                    
-                    self.xLabel.setText(String(format: "X: %.3f", (data.acceleration.x)))
-                    self.yLabel.setText(String(format: "Y: %.3f", (data.acceleration.y)))
-                    self.zLabel.setText(String(format: "Z: %.3f", (data.acceleration.z)))
-                    
-                }
-            )
-        } else {
-            print("Accelerometer is not available")
-        }
+        let newStream: WatchAccStream = WatchAccStream()
+        print("B")
+        
+        newStream.addListener(self)
+        print("C")
+        
+        newStream.startupStream()
+        print("D")
+        
+        let myClassifier = LogRegClassifier(aSegmentHandler: nil)
+        print("E")
+        
+        let myExtractor = FeatureExtractor(aSegmentHandler: myClassifier)
+        print("F")
+        
+        let mySegmentor = EnergySegmentor(aHandler: myExtractor, aStream: newStream)
+        print("G")
+        
+        newStream.addListener(mySegmentor)
+        print("H")
+        
+        myClassifier.addListener(self)
+        print("I")
     }
     
+    override func awakeWithContext(context: AnyObject?) {
+        super.awakeWithContext(context)
 
+    }
+    
+    func newSensorCoordinate(aCoordinate: Coordinate) {
+        let tmpArr = aCoordinate.toArray()
+        self.xLabel.setText(String(format: "X: %.3f", (tmpArr[0])))
+        self.yLabel.setText(String(format: "Y: %.3f", (tmpArr[1])))
+        self.zLabel.setText(String(format: "Z: %.3f", (tmpArr[2])))
+    }
+    
+    
+    func didReceiveNewClassification(aClassification: String){
+        self.gestureLabel.setText(aClassification)
+        let watch: WKInterfaceDevice = WKInterfaceDevice()
+        watch.playHaptic(.Success)
+    }
+    
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
     }
     
-
-
+    
+    
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-
+    
 }
