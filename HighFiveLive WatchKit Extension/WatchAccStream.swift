@@ -29,24 +29,24 @@ class WatchAccStream : SensorDataStream {
         
         if motionManager.accelerometerAvailable{
             motionManager.accelerometerUpdateInterval = 0.02
-            motionManager.startAccelerometerUpdates()
-/*
+
             motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue()) {
                 [weak self] (data: CMAccelerometerData?, error: NSError?) in
-                if(data != nil){
-                    let newCoord = Coordinate(x: (data?.acceleration.x)!, y: (data?.acceleration.y)!, z: (data?.acceleration.z)!)
+                if(data?.acceleration != nil){
+                    let newCoord = Coordinate(x: (-1) * (data?.acceleration.x)!, y: (data?.acceleration.y)!, z: (data?.acceleration.z)!)
                     self!.myCache.removeAtIndex(0)
                     self!.myCache.append(newCoord)
                     
                     for aListner in self!.myListeners{
                         aListner.newSensorCoordinate(newCoord)
                     }
+            
                 }
             }
-*/
-            
-            myTimer = NSTimer.scheduledTimerWithTimeInterval(0.02, target:self, selector: Selector("getNewCoord"), userInfo: nil, repeats: true)
-            myTimer.fire()
+
+            //motionManager.startAccelerometerUpdates()
+            //myTimer = NSTimer.scheduledTimerWithTimeInterval(0.02, target:self, selector: Selector("getNewCoord"), userInfo: nil, repeats: true)
+            //myTimer.fire()
         } else {
             print("Accelerometer is not available")
         }
@@ -55,7 +55,8 @@ class WatchAccStream : SensorDataStream {
     
     
     func terminateStream(){
-        myTimer.invalidate()
+        motionManager.stopAccelerometerUpdates()
+        //myTimer.invalidate()
     }
     
     
@@ -63,7 +64,7 @@ class WatchAccStream : SensorDataStream {
     @objc func getNewCoord(){
         if(motionManager.accelerometerActive && motionManager.accelerometerData != nil){
             let data:CMAccelerometerData = motionManager.accelerometerData!
-            let newCoord = Coordinate(x: data.acceleration.x, y: data.acceleration.y, z: data.acceleration.z)
+            let newCoord = Coordinate(x: (-1 * data.acceleration.x), y: data.acceleration.y, z: data.acceleration.z)
             
             myCache.removeAtIndex(0)
             myCache.append(newCoord)

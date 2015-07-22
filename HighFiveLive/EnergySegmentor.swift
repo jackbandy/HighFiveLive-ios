@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WatchKit
 import UIKit
 
 class EnergySegmentor : StreamListener {
@@ -35,6 +36,10 @@ class EnergySegmentor : StreamListener {
                 notification.soundName = UILocalNotificationDefaultSoundName // play default sound
                 UIApplication.sharedApplication().scheduleLocalNotification(notification)
                 */
+                
+                //let watch: WKInterfaceDevice = WKInterfaceDevice()
+                //watch.playHaptic(.Success)
+                
                 isSegmenting = true
                 var toAdd: Array<Coordinate> = streamSource.getCache256()
                 toAdd.removeRange(0..<240)

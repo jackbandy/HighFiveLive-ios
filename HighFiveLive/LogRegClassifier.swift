@@ -40,9 +40,7 @@ class LogRegClassifier : SegmentHandler, GestureClassifier {
     
     func handleNewSegment(segmentPoints: Array<Coordinate>, featureVector: Array<Double>?) {
         let size : Int! = featureVector?.count
-        let features : Array<Double>! = featureVector
-        print("reached!")
-        
+        let features : Array<Double>! = featureVector        
         
         /*
         //used to ensure proper feature extraction with test segment
@@ -72,34 +70,34 @@ class LogRegClassifier : SegmentHandler, GestureClassifier {
         
         switch findIndexOfMax(costs) {
         case 0:
-            broadcastClassification("FistPump");
+            broadcastClassification("FistPump")
         case 1:
-            broadcastClassification("HighWave");
+            broadcastClassification("HighWave")
         case 2:
-            broadcastClassification("HandShake");
+            broadcastClassification("HandShake")
         case 3:
-            broadcastClassification("FistBump");
+            broadcastClassification("FistBump")
         case 4:
-            broadcastClassification("LowWave");
+            broadcastClassification("LowWave")
         case 5:
-            broadcastClassification("Point");
+            broadcastClassification("Point")
         case 6:
-            broadcastClassification("MotionOver");
+            broadcastClassification("MotionOver")
         case 7:
-            broadcastClassification("HighFive");
+            broadcastClassification("HighFive")
         case 8:
-            broadcastClassification("Applause");
+            broadcastClassification("Applause")
         default:
-            broadcastClassification("Unknown");
+            broadcastClassification("Unknown")
         }
         
     }
     
     
     func broadcastClassification(classification: String){
-        for aListener in myListeners {
-            aListener.didReceiveNewClassification(classification)
-        }
+            for aListener in self.myListeners {
+                aListener.didReceiveNewClassification(classification)
+            }
     }
     
     

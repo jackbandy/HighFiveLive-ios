@@ -524,7 +524,6 @@ public struct Sigma {
                 let x = sin(2.0 * M_PI * Double(i) / Double(n))
                 sinTab[i] = x
             }
-            print("sine table length = \(n)")
         }
         
         let m : Int = Int(log2(Double(n)))

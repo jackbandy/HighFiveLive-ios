@@ -14,7 +14,7 @@
                         <label alignment="left" text="Label" id="Vrr-uQ-kHN"/>
                         <label alignment="left" text="Label" id="Ce4-PA-Oy6"/>
                         <separator alignment="left" id="jVF-WQ-D0p"/>
-                        <label width="136" alignment="left" text="No gesture yet!" id="oVm-wj-73R"/>
+                        <label width="136" alignment="left" text="Not tracking yet!" id="oVm-wj-73R"/>
                         <button width="1" alignment="left" title="Start" id="g31-yN-EaS">
                             <connections>
                                 <action selector="startBtn" destination="AgC-eL-Hgc" id="KmF-Xq-6Ys"/>
@@ -23,6 +23,7 @@
                     </items>
                     <connections>
                         <outlet property="gestureLabel" destination="oVm-wj-73R" id="Eea-so-2aM"/>
+                        <outlet property="theButton" destination="g31-yN-EaS" id="L1Q-C4-NTC"/>
                         <outlet property="xLabel" destination="qGC-t3-stb" id="FBt-vu-naW"/>
                         <outlet property="yLabel" destination="Vrr-uQ-kHN" id="S8B-07-Ad0"/>
                         <outlet property="zLabel" destination="Ce4-PA-Oy6" id="Zkg-kH-t3O"/>
@@ -36,23 +37,17 @@
             <objects>
                 <notificationController id="YCC-NB-fut">
                     <items>
-                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                        <label alignment="left" text="Detected gesture!" id="IdU-wH-bcW"/>
+                        <label alignment="left" text="Fist bump" id="nwC-WS-101"/>
+                        <separator alignment="left" id="GtT-vy-pOK"/>
                     </items>
                     <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
                     <connections>
                         <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
-                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
                     </connections>
                 </notificationController>
             </objects>
             <point key="canvasLocation" x="220" y="643"/>
-        </scene>
-        <!--Notification Controller-->
-        <scene sceneID="ZPc-GJ-vnh">
-            <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="HighFiveLive_WatchKit_App" customModuleProvider="target"/>
-            </objects>
-            <point key="canvasLocation" x="468" y="643"/>
         </scene>
     </scenes>
 </document>
