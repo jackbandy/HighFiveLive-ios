@@ -23,6 +23,7 @@ class ViewController: UIViewController, StreamListener, ClassificationListener {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*
         let newStream: PhoneAccStream = PhoneAccStream()
         newStream.addListener(self)
         newStream.startupStream()
@@ -31,7 +32,7 @@ class ViewController: UIViewController, StreamListener, ClassificationListener {
         let mySegmentor = EnergySegmentor(aHandler: myExtractor, aStream: newStream)
         newStream.addListener(mySegmentor)
         myClassifier.addListener(self)
-        
+        */
         /*
         var test = Array<Coordinate>()
         for i in 0..<128 {

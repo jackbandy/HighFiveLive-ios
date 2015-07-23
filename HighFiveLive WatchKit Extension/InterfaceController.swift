@@ -14,10 +14,12 @@ import CoreMotion
 class InterfaceController: WKInterfaceController, StreamListener, ClassificationListener {
     
     private var isTracking: Bool
+    private var coordCount: Int
     private var myStream: SensorDataStream
     private var myClassifier: GestureClassifier
     private var myExtractor: FeatureExtractor
     private var mySegmentor: EnergySegmentor
+    private var gestureText: String
     
     @IBOutlet var xLabel: WKInterfaceLabel!
     @IBOutlet var gestureLabel: WKInterfaceLabel!
@@ -27,11 +29,15 @@ class InterfaceController: WKInterfaceController, StreamListener, Classification
     
     
     override init() {
+        coordCount = 0
         isTracking = false
+        gestureText = "Not tracking yet!"
+
         myStream = WatchAccStream()
         myClassifier = LogRegClassifier(aSegmentHandler: nil)
         myExtractor = FeatureExtractor(aSegmentHandler: myClassifier as! SegmentHandler)
         mySegmentor = EnergySegmentor(aHandler: myExtractor, aStream: myStream)
+        
         super.init()
         
         myStream.addListener(self)
@@ -42,14 +48,22 @@ class InterfaceController: WKInterfaceController, StreamListener, Classification
     
     @IBAction func startBtn() {
         if(isTracking){
-            self.gestureLabel.setText("Not tracking yet!")
-            self.theButton.setTitle("Start")
-            myStream.terminateStream()
+            dispatch_async(dispatch_get_main_queue()) {
+                self.gestureText = "Not tracking yet!"
+                self.gestureLabel.setText(self.gestureText)
+                self.theButton.setTitle("Start")
+                self.myStream.terminateStream()
+                self.isTracking = false
+            }
         }
         else if(!isTracking){
-            self.gestureLabel.setText("Tracking!")
-            self.theButton.setTitle("Stop")
-            myStream.startupStream()
+            dispatch_async(dispatch_get_main_queue()) {
+                self.gestureText = "Tracking!"
+                self.gestureLabel.setText(self.gestureText)
+                self.theButton.setTitle("Stop")
+                self.myStream.startupStream()
+                self.isTracking = true
+            }
         }
     }
     
@@ -59,16 +73,23 @@ class InterfaceController: WKInterfaceController, StreamListener, Classification
     }
     
     func newSensorCoordinate(aCoordinate: Coordinate) {
-        let tmpArr = aCoordinate.toArray()
-        self.xLabel.setText(String(format: "X: %.3f", (tmpArr[0])))
-        self.yLabel.setText(String(format: "Y: %.3f", (tmpArr[1])))
-        self.zLabel.setText(String(format: "Z: %.3f", (tmpArr[2])))
+        if(coordCount++ == 16){
+            coordCount = 0
+            dispatch_async(dispatch_get_main_queue()) {
+                let tmpArr = aCoordinate.toArray()
+                self.xLabel.setText(String(format: "X: %.3f", (tmpArr[0])))
+                self.yLabel.setText(String(format: "Y: %.3f", (tmpArr[1])))
+                self.zLabel.setText(String(format: "Z: %.3f", (tmpArr[2])))
+                self.gestureLabel.setText(self.gestureText)
+            }
+        }
     }
     
     
     func didReceiveNewClassification(aClassification: String){
+        gestureText = aClassification
         dispatch_async(dispatch_get_main_queue()) {
-            self.gestureLabel.setText(aClassification)
+            self.gestureLabel.setText(self.gestureText)
         }
         let watch: WKInterfaceDevice = WKInterfaceDevice()
         self.gestureLabel.setText(aClassification)

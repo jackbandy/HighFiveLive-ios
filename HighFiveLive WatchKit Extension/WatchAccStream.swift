@@ -10,6 +10,7 @@ import Foundation
 import CoreMotion
 
 class WatchAccStream : SensorDataStream {
+    private var isStreaming : Bool = false
     private var myListeners : Array<StreamListener> = []
     private var myTimer : NSTimer!
     private var motionManager: CMMotionManager!
@@ -43,11 +44,13 @@ class WatchAccStream : SensorDataStream {
             
                 }
             }
+            isStreaming = true
 
             //motionManager.startAccelerometerUpdates()
             //myTimer = NSTimer.scheduledTimerWithTimeInterval(0.02, target:self, selector: Selector("getNewCoord"), userInfo: nil, repeats: true)
             //myTimer.fire()
         } else {
+            isStreaming = false
             print("Accelerometer is not available")
         }
     }
@@ -55,6 +58,7 @@ class WatchAccStream : SensorDataStream {
     
     
     func terminateStream(){
+        isStreaming = false
         motionManager.stopAccelerometerUpdates()
         //myTimer.invalidate()
     }
@@ -62,15 +66,17 @@ class WatchAccStream : SensorDataStream {
     
     
     @objc func getNewCoord(){
-        if(motionManager.accelerometerActive && motionManager.accelerometerData != nil){
-            let data:CMAccelerometerData = motionManager.accelerometerData!
-            let newCoord = Coordinate(x: (-1 * data.acceleration.x), y: data.acceleration.y, z: data.acceleration.z)
-            
-            myCache.removeAtIndex(0)
-            myCache.append(newCoord)
-            
-            for aListner in myListeners{
-                aListner.newSensorCoordinate(newCoord)
+        if(isStreaming){
+            if(motionManager.accelerometerActive && motionManager.accelerometerData != nil){
+                let data:CMAccelerometerData = motionManager.accelerometerData!
+                let newCoord = Coordinate(x: (-1 * data.acceleration.x), y: data.acceleration.y, z: data.acceleration.z)
+                
+                myCache.removeAtIndex(0)
+                myCache.append(newCoord)
+                
+                for aListner in myListeners{
+                    aListner.newSensorCoordinate(newCoord)
+                }
             }
         }
     }
